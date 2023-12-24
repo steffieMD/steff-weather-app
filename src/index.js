@@ -43,6 +43,15 @@ const searchCity = () => {
 
     let dewPoint = document.querySelector("#degree");
     dewPoint.innerHTML = `Dew Point: ${response.data.wind.degree}°`;
+
+    const getDate = () => {
+      let timeMS = response.data.time;
+
+      let date = new Date(timeMS);
+      console.log(date);
+    };
+
+    getDate();
   };
   axios.get(apiUrl).then(search);
 };

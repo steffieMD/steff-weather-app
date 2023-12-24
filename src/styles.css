@@ -75,6 +75,13 @@ h1 {
   color: #666;
 }
 
+h2 {
+  text-align: right;
+  font-size: 15px;
+  padding: 0 15px 0 15px;
+  color: #666;
+}
+
 #weather-icon {
   font-size: 60px;
   margin-top: 35px;
