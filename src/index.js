@@ -1,3 +1,26 @@
+let changeDate = new Date();
+let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+let h2Header = document.querySelector("h2");
+h2Header.innerHTML = `${days[changeDate.getDay()]} ${changeDate.getDate()}th ${
+  months[changeDate.getMonth()]
+}, ${changeDate.getHours()}:${changeDate.getMinutes()}`;
+
 let searchButton = document.querySelector("#search-button");
 
 const searchCity = () => {
@@ -46,9 +69,15 @@ const searchCity = () => {
 
     const getDate = () => {
       let timeMS = response.data.time;
-
+      console.log(timeMS);
       let date = new Date(timeMS);
       console.log(date);
+
+      let dateHeader = document.querySelector("h2");
+
+      dateHeader.innerHTML = `${days[date.getDay()]} ${date.getDate()}th ${
+        months[date.getMonth()]
+      }, ${date.getHours()}:${date.getMinutes()}`;
     };
 
     getDate();
