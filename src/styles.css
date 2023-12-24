@@ -13,7 +13,8 @@ form {
   margin-bottom: 20px;
 }
 
-input {
+input,
+button {
   padding: 10px;
   margin-right: 5px;
   border-radius: 5px;
@@ -24,9 +25,10 @@ input[type="search"] {
   border: 1px solid blueviolet;
 }
 
-input[type="button"] {
+input[type="button"],
+#location {
   border: none;
-  background-color: transparent;
+  background-color: blueviolet;
   color: black;
   padding: 10px 20px;
   font-size: 16px;
@@ -37,18 +39,21 @@ input[type="button"] {
   cursor: pointer;
 }
 
-input[type="button"]:focus {
+input[type="button"]:focus,
+#location:focus {
   outline: none;
   border-color: blueviolet;
   box-shadow: 0 0 5px blueviolet;
 }
-input[type="button"]:active {
+input[type="button"]:active,
+#location:active {
   border-color: blueviolet;
   box-shadow: 0 0 5px blueviolet;
   box-shadow: none;
 }
 
-input[type="button"]:visited {
+input[type="button"]:visited,
+#location:visited {
   border: 2px solid blueviolet;
   outline: none;
 }
