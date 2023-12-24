@@ -8,54 +8,63 @@
     <title>Weather App</title>
   </head>
   <body>
-    <header>
-      <form action="#">
-        <input
-          type="search"
-          name="search"
-          id="search"
-          placeholder="San Francisco, CA..."
-        />
-        <input type="button" value="🌀" />
-        <input type="button" value="🛜" />
-      </form>
-    </header>
-    <main>
-      <div id="current-temperature">
-        <p>
-          <p>🌤️</p>
-          <strong>54</strong>
-          <span id="fahrenheit">°F</span>
-          <span id="celsius">°C</span>
-        </p>
-        <p>
-          <span id="description">Clear</span>
-          <span id="feels-like">Feels like 54°</span>
-          <span id="pressure">Pressure: 1023 mbar</span>
-          <span id="humidity">Humidity: 53%</span>
-        </p>
+    <div class="container">
+      <header>
+        <form>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="San Francisco, CA..."
+          />
+          <input type="button" value="🌀" id="search-button" />
+          <input type="button" value="🛜" />
+        </form>
+      </header>
+      <main>
+        <div id="current-temperature">
+          <div class="just-temperature">
+            <p id="weather-icon">🌤️</p>
+            <strong>54</strong>
+            <div class="unit">
+              <span id="fahrenheit">°F</span>
+              <hr />
+              <span id="celsius">°C</span>
+            </div>
+          </div>
 
-        <p>
-          <span id="wind-speed">Wind -> 4mph</span>
-          <span id="degree">Dew Point: 42°</span>
-        </p>
-      </div>
-      <div id="other-days"></div>
-    </main>
-    <footer>
-      This project was coded by
-      <a href="https://github.com/steffieMD" target="_blank">Steffie Metieh</a>
-      and is
-      <a
-        href="https://github.com/steffieMD/steff-weather-app.git"
-        target="_blank"
-        >open-sourced on GitHub</a
-      >
-      and
-      <a href="https://curious-lamington-effc92.netlify.app/" target="_blank"
-        >hosted on netlify</a
-      >
-    </footer>
+          <p class="weather-info">
+            <span id="description">Clear</span>
+            <span id="feels-like">Feels like 54°</span>
+            <span id="pressure">Pressure: 1023 mbar</span>
+            <span id="humidity">Humidity: 53%</span>
+          </p>
+
+          <p class="more-weather-info">
+            <span id="wind-speed">Wind -> 4mph</span>
+            <span id="degree">Dew Point: 42°</span>
+          </p>
+        </div>
+        <div id="other-days"></div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/steffieMD" target="_blank"
+          >Steffie Metieh</a
+        >
+        and is
+        <a
+          href="https://github.com/steffieMD/steff-weather-app.git"
+          target="_blank"
+          >open-sourced on GitHub</a
+        >
+        and
+        <a href="https://curious-lamington-effc92.netlify.app/" target="_blank"
+          >hosted on netlify</a
+        >
+      </footer>
+    </div>
+
     <script src="src/index.js"></script>
   </body>
 </html>
