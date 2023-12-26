@@ -62,10 +62,10 @@ const search = (response) => {
   pressure.innerHTML = `Pressure: ${response.data.temperature.pressure}mbar`;
 
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `Humidity:  ${response.data.temperature.humidity}%`;
+  humidity.innerHTML = ` ${response.data.temperature.humidity}%`;
 
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = `Wind: ${response.data.wind.speed}mph`;
+  windSpeed.innerHTML = `${response.data.wind.speed}mph`;
 
   let dewPoint = document.querySelector("#degree");
   dewPoint.innerHTML = `Dew Point: ${response.data.wind.degree}°`;
