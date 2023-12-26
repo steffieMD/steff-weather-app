@@ -25,7 +25,7 @@ input[type="search"] {
   border: 1px solid blueviolet;
 }
 
-input[type="button"],
+#search-button,
 #location {
   border: none;
   background-color: blueviolet;
@@ -39,20 +39,20 @@ input[type="button"],
   cursor: pointer;
 }
 
-input[type="button"]:focus,
+#search-button:focus,
 #location:focus {
   outline: none;
   border-color: blueviolet;
   box-shadow: 0 0 5px blueviolet;
 }
-input[type="button"]:active,
+#search-button:active,
 #location:active {
   border-color: blueviolet;
   box-shadow: 0 0 5px blueviolet;
   box-shadow: none;
 }
 
-input[type="button"]:visited,
+#search-button:visited,
 #location:visited {
   border: 2px solid blueviolet;
   outline: none;
@@ -161,7 +161,6 @@ h2 {
 }
 
 .icon {
-  padding: 10px 10px 0 10px;
+  padding: 0 10px 0 10px;
   max-width: 120px;
-  margin-bottom: 10px;
 }
