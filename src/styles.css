@@ -199,3 +199,7 @@ h2 {
 #future-day {
   color: #666;
 }
+
+.last {
+  border: none;
+}
