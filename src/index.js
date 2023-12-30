@@ -17,6 +17,71 @@ let months = [
   "Dec",
 ];
 
+const getForecast = () => {
+  let userInput = document.querySelector("#search");
+  let city = userInput.value;
+  let forecastApiUril = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+
+  const showForecast = (response) => {
+    let icon1 = document.getElementById("icon-1");
+    icon1.src = `${response.data.daily[0].condition.icon_url}`;
+    let maxTempOne = document.querySelector("#max-temp-one");
+    maxTempOne.innerHTML = `${Math.round(
+      response.data.daily[0].temperature.maximum
+    )}°`;
+    let minTempOne = document.querySelector("#min-temp-one");
+    minTempOne.innerHTML = `${Math.round(
+      response.data.daily[0].temperature.minimum
+    )}°`;
+
+    let icon2 = document.getElementById("icon-2");
+    icon2.src = `${response.data.daily[1].condition.icon_url}`;
+    let maxTempTwo = document.querySelector("#max-temp-two");
+    maxTempTwo.innerHTML = `${Math.round(
+      response.data.daily[1].temperature.maximum
+    )}°`;
+    let minTempTwo = document.querySelector("#min-temp-two");
+    minTempTwo.innerHTML = `${Math.round(
+      response.data.daily[1].temperature.minimum
+    )}°`;
+
+    let icon3 = document.getElementById("icon-3");
+    icon3.src = `${response.data.daily[2].condition.icon_url}`;
+    let maxTempThree = document.querySelector("#max-temp-three");
+    maxTempThree.innerHTML = `${Math.round(
+      response.data.daily[2].temperature.maximum
+    )}°`;
+    let minTempThree = document.querySelector("#min-temp-three");
+    minTempThree.innerHTML = `${Math.round(
+      response.data.daily[2].temperature.minimum
+    )}°`;
+
+    let icon4 = document.getElementById("icon-4");
+    icon4.src = `${response.data.daily[3].condition.icon_url}`;
+    let maxTempFour = document.querySelector("#max-temp-four");
+    maxTempFour.innerHTML = `${Math.round(
+      response.data.daily[3].temperature.maximum
+    )}°`;
+    let minTempFour = document.querySelector("#min-temp-four");
+    minTempFour.innerHTML = `${Math.round(
+      response.data.daily[3].temperature.minimum
+    )}°`;
+
+    let icon5 = document.getElementById("icon-5");
+    icon5.src = `${response.data.daily[4].condition.icon_url}`;
+    let maxTempFive = document.querySelector("#max-temp-five");
+    maxTempFive.innerHTML = `${Math.round(
+      response.data.daily[4].temperature.maximum
+    )}°`;
+    let minTempFive = document.querySelector("#min-temp-five");
+    minTempFive.innerHTML = `${Math.round(
+      response.data.daily[4].temperature.minimum
+    )}°`;
+  };
+
+  axios.get(forecastApiUril).then(showForecast);
+};
+
 window.addEventListener("load", () => {
   navigator.geolocation.getCurrentPosition(
     (data) => {
@@ -97,6 +162,7 @@ const searchCity = (e) => {
   if (city.length === 0) {
     header.innerHTML = `No city inputed!`;
   }
+  getForecast();
 
   axios.get(apiUrl).then(search);
 };
