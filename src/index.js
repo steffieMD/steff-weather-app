@@ -98,9 +98,9 @@ window.addEventListener("load", () => {
 });
 
 let h2Header = document.querySelector("h2");
-h2Header.innerHTML = `${days[changeDate.getDay()]} ${changeDate.getDate()}th ${
-  months[changeDate.getMonth()]
-}, ${changeDate.getHours()}:${changeDate.getMinutes()}`;
+h2Header.innerHTML = `${days[changeDate.getDay()]}, ${String(
+  changeDate.getHours()
+).padStart(2, "0")}:${String(changeDate.getMinutes()).padStart(2, "0")}`;
 
 let searchButton = document.querySelector("#search-button");
 
@@ -142,9 +142,9 @@ const search = (response) => {
 
     let dateHeader = document.querySelector("h2");
 
-    dateHeader.innerHTML = `${days[date.getDay()]} ${date.getDate()}th ${
-      months[date.getMonth()]
-    }, ${date.getHours()}:${date.getMinutes()}`;
+    dateHeader.innerHTML = `${days[date.getDay()]}, ${String(
+      date.getHours()
+    ).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}`;
   };
 
   getDate();
